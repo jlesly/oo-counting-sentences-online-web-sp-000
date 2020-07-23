@@ -24,29 +24,34 @@ end
 
 class String
 
-
 def sentence?
+    if self.end_with?(".")
+      true
+    else
+      false
+    end
+  end	 
 
-    self.end_with?(".") ? true : false
-  end	  end
+def question?
+  if self.end_with?("?")
+      true
+    else
+      false
+    end
+  end	
 
+def exclamation?
 
-  def question?	  def question?
+    if self.end_with?("!")
+      true
+    else
+      false
+    end
+    end
 
-    self.end_with?("?") ? true : false
-  end	  end
+def count_sentences
 
-
-  def exclamation?	  def exclamation?
-
-    self.end_with?("!") ? true : false
-  end	  end
-
-
-  def count_sentences	  def count_sentences
-
-    sentence_array = self.split(/[.?!]/)
-    sentence_array.delete_if{|sentence| sentence.empty?}
-    sentence_array.length
-  end	  end
-end 	end
+    array = self.split(/[\.!?] /)
+    array.length
+  end	
+end 	
